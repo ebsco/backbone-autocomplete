@@ -42,7 +42,7 @@
 		queryParameter: "query",
 		minKeywordLength: 2,
 		currentText: "",
-		itemView: AutoCompleteItemView,
+		itemView: Backbone.AutoCompleteItemView,
 
 		initialize: function (options) {
 			_.extend(this, options);
@@ -172,8 +172,8 @@
 	});
 
 	return {
-		View: AutoCompleteView,
-		ItemView: AutoCompleteItemView
+		View: Backbone.AutoCompleteView,
+		ItemView: Backbone.AutoCompleteItemView
 	}
 
 }));
