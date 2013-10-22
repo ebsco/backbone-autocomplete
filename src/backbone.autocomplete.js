@@ -5,14 +5,14 @@
 	} else {
 		// Browser globals
 		var lib = factory(root.Backbone, root._);
-		root.AutoCompleteItemView = lib.AutoCompleteItemView
-		root.AutoCompleteView = lib.AutoCompleteView;
+		root.AutoCompleteItemView = lib.ItemView
+		root.AutoCompleteView = lib.View;
 	}
 }(this, function (Backbone, _) {
 	Backbone = Backbone || window.Backbone;
 	_ = _ || window._;
 
-	var AutoCompleteItemView = Backbone.View.extend({
+	Backbone.AutoCompleteItemView = Backbone.View.extend({
 		tagName: "li",
 		template: _.template('<a href="#"><%= label %></a>'),
 
@@ -34,7 +34,7 @@
 
 	});
 
-	var AutoCompleteView = Backbone.View.extend({
+	Backbone.AutoCompleteView = Backbone.View.extend({
 		tagName: "ul",
 		className: "autocomplete",
 		wait: 300,
@@ -172,8 +172,8 @@
 	});
 
 	return {
-		AutoCompleteView: AutoCompleteView,
-		AutoCompleteItemView: AutoCompleteItemView
+		View: AutoCompleteView,
+		ItemView: AutoCompleteItemView
 	}
 
 }));
